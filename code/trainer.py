@@ -16,8 +16,8 @@ from copy import deepcopy
 from miscc.config import cfg
 from miscc.utils import mkdir_p
 
-from tensorboard import summary
-from tensorboard import FileWriter
+from tensorboardX import summary
+from tensorboardX import FileWriter
 
 from model import G_NET, D_NET64, D_NET128, D_NET256, D_NET512, D_NET1024, INCEPTION_V3
 
@@ -240,7 +240,8 @@ class GANTrainer(object):
         s_gpus = cfg.GPU_ID.split(',')
         self.gpus = [int(ix) for ix in s_gpus]
         self.num_gpus = len(self.gpus)
-        torch.cuda.set_device(self.gpus[0])
+        #torch.cuda.set_device(self.gpus[0])
+        #torch._C._cuda_setDevice(-1)
         cudnn.benchmark = True
 
         self.batch_size = cfg.TRAIN.BATCH_SIZE * self.num_gpus
@@ -534,7 +535,8 @@ class condGANTrainer(object):
         s_gpus = cfg.GPU_ID.split(',')
         self.gpus = [int(ix) for ix in s_gpus]
         self.num_gpus = len(self.gpus)
-        torch.cuda.set_device(self.gpus[0])
+        #torch.cuda.set_device(self.gpus[0])
+        #torch._C._cuda_setDevice(-1)
         cudnn.benchmark = True
 
         self.batch_size = cfg.TRAIN.BATCH_SIZE * self.num_gpus

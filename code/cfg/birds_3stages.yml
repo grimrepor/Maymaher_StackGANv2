@@ -12,9 +12,9 @@ TREE:
 
 
 TRAIN:
-    FLAG: True
-    NET_G: ''  # '../output/birds_3stages/Model/netG_epoch_700.pth'
-    NET_D: ''  # '../output/birds_3stages/Model/netD'
+    FLAG: False
+    NET_G: '../models/birds_3stages/netG_210000.pth'
+    NET_D: '../models/birds_3stages/netD'
     BATCH_SIZE: 24
     MAX_EPOCH: 600
     SNAPSHOT_INTERVAL: 2000

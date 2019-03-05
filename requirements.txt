@@ -1,0 +1,12 @@
+torch==1.0.0
+torchvision==0.2.1
+numpy==1.15.1
+lmdb==0.94
+easydict==1.9
+six==1.11.0
+requests==2.19.1
+pandas==0.23.4
+Pillow==5.4.1
+python_dateutil==2.7.5
+tensorboardX==1.6
+PyYAML==3.13
